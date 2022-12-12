@@ -1,0 +1,338 @@
+{% block %}
+    {% client %}Mohon (.*){% endclient %}
+    {% response %}{% chat %1 %}{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Siapa Namamu{% endclient %}
+    {% response %}Nama saya adalah ChatBot Salam kenal ya{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}(.*)Namamu(.*){% endclient %}
+    {% response %}Nama saya adalah ChatBot Salam kenal ya{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Panggil (saya |aku ) (.*){% endclient %}
+    {% response %}Saya akan mengingat nama {name:%1} itu {% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Siapa nama saya?{% endclient %}
+    {% response %}{%if {name} %}Namamu adalah {name}{% else %} Saya tidak tahu namamu, Bisakah kamu memberi tahu namamu?{% endif %}{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}(Saya |Nama saya )?(.*){% endclient %}
+    {% prev %}(.*)Bisakah kamu memberi tahu namamu?{% endprev %}
+    {% response %}Terimakasih {name:%2}{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Apakah kamu (know|remember) Namaku{% endclient %}
+    {% response %}{% if {name} %} Iya {name}{% else %} Tidak,{% chat what is my name %}{% endif %}{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Saya membutuhkan (.*){% endclient %}
+    {% response %}Apa yang bisa saya bantu %1?{% endresponse %}
+    {% response %}Apakah itu akan membantu kamu %1?{% endresponse %}
+    {% response %}Apakah kamu yakin kamu butuh %1?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Mengapa bukan kamu (.*){% endclient %}
+    {% response %}Apakah Anda benar -benar berpikir saya tidak %1?{% endresponse %}
+    {% response %}Mungkin akhirnya saya akan melakukannya %1.{% endresponse %}
+    {% response %}Apakah Anda benar -benar menginginkan saya %1?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}(Saya (saya|merasa) )?(merasa )?(sangat )?(.*){% endclient %}
+    {% prev %}.*Apa kabar{% endprev %}
+    {% response %}{% if {%low %5 %} == fine | {%low %5 %} == good | {%low %5 %} == happy %}  Nice to know that you are %5. What else? {% else %} why you feel %5 {% endif %}{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}apa kabar{% endclient %}
+    {% response %}Aku baik baik saja, bagaimana denganmu?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}baik, bagaimana denganmu{% endclient %}
+    {% response %}Aku baik baik saja, terimakasih sudah tanya kabar hehehe?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Why can not I (.*){% endclient %}
+    {% response %}Do you think you should be able to %1?{% endresponse %}
+    {% response %}If you could %1, what would you do?{% endresponse %}
+    {% response %}I do not know -- why can not you %1?{% endresponse %}
+    {% response %}Have you really tried?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}I can not (.*){% endclient %}
+    {% response %}How do you know you can not %1?{% endresponse %}
+    {% response %}Perhaps you could %1 if you tried.{% endresponse %}
+    {% response %}What would it take for you to %1?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}I am (.*){% endclient %}
+    {% response %}Did you come to me because you are %1?{% endresponse %}
+    {% response %}How long have you been %1?{% endresponse %}
+    {% response %}Bagaimana perasaanmu terhadap %1?{% endresponse %}
+    {% response %}Bagaimana perasaanmu tentang %1 ?{% endresponse %}
+    {% response %}Do you enjoy being %1?{% endresponse %}
+    {% response %}Why do you tell me you are %1?{% endresponse %}
+    {% response %}Why do you think you are %1?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Are you (.*){% endclient %}
+    {% response %}Why does it matter whether I am %1?{% endresponse %}
+    {% response %}Would you prefer it if I were not %1?{% endresponse %}
+    {% response %}Perhaps you believe I am %1.{% endresponse %}
+    {% response %}I may be %1 -- what do you think?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}What (.*){% endclient %}
+    {% response %}Why do you ask?{% endresponse %}
+    {% response %}How would an answer to that help you?{% endresponse %}
+    {% response %}What do you think?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}How (.*){% endclient %}
+    {% response %}How do you suppose?{% endresponse %}
+    {% response %}Perhaps you can answer your own question.{% endresponse %}
+    {% response %}What is it you are really asking?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Because (.*){% endclient %}
+    {% response %}Is that the real reason?{% endresponse %}
+    {% response %}What other reasons come to mind?{% endresponse %}
+    {% response %}Does that reason apply to anything else?{% endresponse %}
+    {% response %}If %1, what else must be true?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}(.*) sorry (.*){% endclient %}
+    {% response %}There are many times when no apology is needed.{% endresponse %}
+    {% response %}What feelings do you have when you apologize?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Halo(.*){% endclient %}
+    {% response %}Halo ... saya senang Anda bisa mampir hari ini.{% endresponse %}
+    {% response %}Halo ... apa kabar hari ini?{% endresponse %}
+    {% response %}Halo, bagaimana perasaanmu hari ini?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}I think (.*){% endclient %}
+    {% response %}Do you doubt %1?{% endresponse %}
+    {% response %}Do you really think so?{% endresponse %}
+    {% response %}But you are not sure %1?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}baik (.*){% endclient %}
+    {% response %}Luar biasa hehe %1?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}(.*) friend (.*){% endclient %}
+    {% response %}Tell me more about your friends.{% endresponse %}
+    {% response %}When you think of a friend, what comes to mind?{% endresponse %}
+    {% response %}Why do not you tell me about a childhood friend?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Yes{% endclient %}
+    {% response %}You seem quite sure.{% endresponse %}
+    {% response %}OK, but can you elaborate a bit?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}(.*) computer(.*){% endclient %}
+    {% response %}Are you really talking about me?{% endresponse %}
+    {% response %}Does it seem strange to talk to a computer?{% endresponse %}
+    {% response %}How do computers make you feel?{% endresponse %}
+    {% response %}Do you feel threatened by computers?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Is it (.*){% endclient %}
+    {% response %}Do you think it is %1?{% endresponse %}
+    {% response %}Perhaps it is %1 -- what do you think?{% endresponse %}
+    {% response %}If it were %1, what would you do?{% endresponse %}
+    {% response %}It could well be that %1.{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}It is (.*){% endclient %}
+    {% response %}You seem very certain.{% endresponse %}
+    {% response %}If I told you that it probably is not %1, what would you feel?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Can you (.*){% endclient %}
+    {% response %}What makes you think I can not %1?{% endresponse %}
+    {% response %}If I could %1, then what?{% endresponse %}
+    {% response %}Why do you ask if I can %1?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Can I (.*){% endclient %}
+    {% response %}Perhaps you do not want to %1.{% endresponse %}
+    {% response %}Do you want to be able to %1?{% endresponse %}
+    {% response %}If you could %1, would you?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}You are (.*){% endclient %}
+    {% response %}Why do you think I am %1?{% endresponse %}
+    {% response %}Does it please you to think that I am %1?{% endresponse %}
+    {% response %}Perhaps you would like me to be %1.{% endresponse %}
+    {% response %}Perhaps you are really talking about yourself?{% endresponse %}
+    {% response %}Are we talking about you, or me?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}I do not (.*){% endclient %}
+    {% response %}do not you really %1?{% endresponse %}
+    {% response %}Why do not you %1?{% endresponse %}
+    {% response %}Do you want to %1?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}I feel (.*){% endclient %}
+    {% response %}Good, tell me more about these feelings.{% endresponse %}
+    {% response %}Do you often feel %1?{% endresponse %}
+    {% response %}When do you usually feel %1?{% endresponse %}
+    {% response %}When you feel %1, what do you do?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}I have (.*){% endclient %}
+    {% response %}Why do you tell me that you have %1?{% endresponse %}
+    {% response %}Have you really %1?{% endresponse %}
+    {% response %}Now that you have %1, what will you do next?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}I would (.*){% endclient %}
+    {% response %}Could you explain why you would %1?{% endresponse %}
+    {% response %}Why would you %1?{% endresponse %}
+    {% response %}Who else knows that you would %1?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Is there (.*){% endclient %}
+    {% response %}Do you think there is %1?{% endresponse %}
+    {% response %}it is likely that there is %1.{% endresponse %}
+    {% response %}Would you like there to be %1?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Aku (.*){% endclient %}
+    {% response %}Begitu, Kamu %1.{% endresponse %}
+    {% response %}Mengapa kamu mengatakan kalo %1?{% endresponse %}
+    {% response %}Saat kamu %1, bagaimana perasaanmu?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Kamu (.*){% endclient %}
+    {% response %}Kita seharusnya berbicara tentang kamu, bukan saya.{% endresponse %}
+    {% response %}Mengapa kamu mengatakan itu tentang saya?{% endresponse %}
+    {% response %}Mengapa kamu peduli apakah saya %1?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Kenapa (.*){% endclient %}
+    {% response %}Mengapa kamu tidak memberi tahu saya alasannya %1?{% endresponse %}
+    {% response %}Mengapa kamu berpikir %1?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}saya ingin (.*){% endclient %}
+    {% response %}Apa yang kamu lakukan jika kamu punya %1?{% endresponse %}
+    {% response %}Kenapa kamu mau%1?{% endresponse %}
+    {% response %}Apa yang akan kamu lakukan jika kamu punya %1?{% endresponse %}
+    {% response %}Jika kamu punya %1, Lalu apa yang akan kamu lakukan?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}(.*)ibu(.*){% endclient %}
+    {% response %}Bisakah kamu menggambarkan seperti apa ibu mu?.{% endresponse %}
+    {% response %}Apakah kamu rukun dengan ibumu?{% endresponse %}
+    {% response %}Seberapa besar kasih sayangmu kepada ibumu?{% endresponse %}
+    {% response %}Apakah karena itu kamu merasa senang hari ini?{% endresponse %}
+    {% response %}Benar sekali hubungan keluarga itu sangat penting.{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}(.*)ayah(.*){% endclient %}
+    {% response %}Ceritakan lebih banyak tentang ayahmu.{% endresponse %}
+    {% response %}Bagaimana perasaan ayahmu?{% endresponse %}
+    {% response %}Bagaimana perasaanmu tentang ayahm?{% endresponse %}
+    {% response %}Apakah hubungan kamu dengan ayah kamu berhubungan dengan perasaan kamu hari ini?{% endresponse %}
+    {% response %}Apakah kamu kesulitan menunjukkan kasih sayang dengan keluarga kamu?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}(.*)anak(.*){% endclient %}
+    {% response %}Apakah kamu memiliki teman dekat sebagai seorang anak?{% endresponse %}
+    {% response %}Apa kenangan masa kecil favorit kamu?{% endresponse %}
+    {% response %}Apakah kamu ingat mimpi atau mimpi buruk dari masa kecil?{% endresponse %}
+    {% response %}Apakah anak -anak lain terkadang menggodamu?{% endresponse %}
+    {% response %}Menurut kamu bagaimana pengalaman masa kecil kamu berhubungan dengan perasaan kamu hari ini?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}(.*)\?{% endclient %}
+    {% response %}Mengapa kamu menanyakan itu?{% endresponse %}
+    {% response %}Hahah baiklah.{% endresponse %}
+    {% response %}Mungkin jawabannya ada di dalam diri kamu sendiri hahah?{% endresponse %}
+    {% response %}Mengapa kamu tidak memberi tahu saya tentang itu?{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}keluar{% endclient %}
+    {% response %}Terima kasih telah berbicara dengan saya.{% endresponse %}
+    {% response %}Selamat tinggal.{% endresponse %}
+    {% response %}Terima kasih.Semoga harimu menyenangkan!{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}chatbot{% endclient %}
+    {% response %}iya.....{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}salam kenal{% endclient %}
+    {% response %}Salam kenal juga {% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}hahaha{% endclient %}
+    {% response %}Kenapa kok ketawa{% endresponse %}
+    {% response %}Apa yang membuatmu tertawa{% endresponse %}
+    {% response %}Aku nda paham bercandaanmu{% endresponse %}
+{% endblock %}
+
+{% response %}Aku sangat tertarik bisa jelaskan lebih.{% endresponse %}
+{% response %}Ohh begitu... lalu bagaimana kabar keluargamu.{% endresponse %}
+{% response %}Bisakah kamu menjelaskan hal itu?{% endresponse %}
+{% response %}Kenapa kamu bilang seperti itu ?{% endresponse %}
+{% response %}Oh Begitu.{% endresponse %}
+{% response %}Sangat menarik.{% endresponse %}
+{% response %}%0.{% endresponse %}
+{% response %}Senang mendengarnya. Bagaimana perasaanmu terhadap itu?{% endresponse %}
+{% response %}Bagaimana perasaanmu terhadap itu?{% endresponse %}
+{% response %}Apa yang kamu rasakan tentang itu?{% endresponse %}
